@@ -1,0 +1,46 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button aria-label="Menu icon" (click)="toggleMenu()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    <a mat-button routerLink="">Expo Marcos</a>
+    <br>
+    <form class="searchbar">
+        <br>
+        <mat-form-field c>
+            <mat-label>Search something up</mat-label>
+            <input type="tel" matInput>
+            <button matSuffix mat-button><mat-icon >search</mat-icon></button>
+            </mat-form-field>
+        <br>
+    </form>
+    <span class="example-spacer"></span>
+    <a mat-button mat-button routerLink="login"> login <mat-icon matSuffix>login</mat-icon></a>
+    <a mat-button routerLink="signup">Signup</a>
+    <a mat-button>Carrito <mat-icon>shopping_cart</mat-icon></a>
+
+</mat-toolbar>
+
+<mat-sidenav-container autosize color="primary">
+    <mat-sidenav [mode]="isMobile ? 'over' : 'side'" [opened]="isCollapsed ? 'false' : 'true'" >
+      <mat-list>
+        <mat-list-item>Cuenta</mat-list-item>
+        <mat-divider></mat-divider>
+         <a mat-list-item>
+          <span class="entry">
+             <mat-icon>person</mat-icon>
+             Cuenta
+          </span>
+       </a>       
+       <a mat-list-item  routerLink="login">
+        <span class="entry">
+           <mat-icon>shopping_bag</mat-icon>
+           Historial
+        </span>
+        </a>           
+      </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

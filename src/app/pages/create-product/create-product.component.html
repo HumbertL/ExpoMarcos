@@ -1,0 +1,60 @@
+<h1>Crear un producto</h1>
+<mat-divider>
+</mat-divider>
+<br>
+<!-- <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Nombre</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+        <mat-label>Tamaño</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <mat-label>Modelo</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <br>
+      <mat-divider></mat-divider>
+      <h2>Medidas</h2>
+      <mat-slide-toggle color="secondary">Cristal</mat-slide-toggle>
+      <h2>Color</h2>
+      <input [(colorPicker)]="color" [style.background]="color"/>
+    </form> -->
+
+    <mat-grid-list cols="4" rowHeight="100px">
+      <mat-grid-tile
+      [colspan]=3
+      >
+      <mat-form-field class="example-full-width">
+        <mat-label>Nombre</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+          <mat-label>Tamaño</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+          <mat-label>Modelo</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <br>
+    </mat-grid-tile>
+      <mat-grid-tile
+      [colspan]=1
+      [rowspan]=2>Placheholder 2</mat-grid-tile>
+      <div layout="row"></div>
+      <h3>Medidas</h3>
+      <br>
+      <mat-slide-toggle color="secondary">Cristal</mat-slide-toggle>
+      <span class="example-spacer"></span>
+      <h2>Color</h2>
+      
+      <input [(colorPicker)]="color" [style.background]="color"/>
+    </mat-grid-list>
+    

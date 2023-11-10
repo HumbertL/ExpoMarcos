@@ -1,0 +1,15 @@
+form {
+    max-width: 500px;
+    margin: 40px auto 20px; 
+    color: magenta;
+    mat-form-field {
+        width: 100%;
+    }
+
+    div:last-child {
+        text-align: right;
+    }
+    h1 {
+        font-weight: bold;
+    }
+}

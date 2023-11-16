@@ -1,6 +1,15 @@
+
+
+
 mat-form-field {
     display:inline-block;
     padding: 12px;
     flex-direction:row;
   }
+mat-grid-tile-header {
+  font-weight: 800;
+}
 
+.file-name {
+    margin-left: 1rem; /* or whatever margin you require */
+}

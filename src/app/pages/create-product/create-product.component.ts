@@ -15,4 +15,11 @@ export class CreateProductComponent {
     color5: 'rgba(45,208,45,1)'
   };
   selectedColor: string = 'color1';
+
+  selectedFile: any = null;
+
+  onFileSelected(event: any): void {
+      this.selectedFile = event.target.files[0] ?? null;
+
+  }
 }

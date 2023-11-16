@@ -47,14 +47,26 @@
     </mat-grid-tile>
       <mat-grid-tile
       [colspan]=1
-      [rowspan]=2>Placheholder 2</mat-grid-tile>
-      <div layout="row"></div>
-      <h3>Medidas</h3>
-      <br>
-      <mat-slide-toggle color="secondary">Cristal</mat-slide-toggle>
-      <span class="example-spacer"></span>
-      <h2>Color</h2>
+      [rowspan]=2>
+      <mat-grid-tile-header>Imagen</mat-grid-tile-header>
+      <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+        <input hidden (change)="onFileSelected($event)" #fileInput type="file">
+          <span class="file-name">{{selectedFile?.name}}</span>
+
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="3">
+        <table [cellSpacing]="3">
+          <tr>
+            <td><h3>Cristal</h3></td>
+            <td>      <mat-slide-toggle color="secondary">Cristal</mat-slide-toggle>
+            </td>
+            <td>Color</td>
+            <td>
+              <input [(colorPicker)]="color" [style.background]="color"/>
+            </td>
+          </tr>
+        </table>
+      </mat-grid-tile>
       
-      <input [(colorPicker)]="color" [style.background]="color"/>
     </mat-grid-list>
     

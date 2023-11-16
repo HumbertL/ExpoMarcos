@@ -1,0 +1,54 @@
+<mat-grid-list cols="4" class="mainCheckout" style="padding:10px">
+    <mat-grid-tile [colspan]="3" [rowspan]="2">
+        <mat-stepper orientation="vertical" [linear]="true" #stepper class="checkOutStepper">
+            <mat-step [stepControl]="addressFormGroup">
+                <div style="width:800px">
+              <form [formGroup]="addressFormGroup">
+                <ng-template matStepLabel>Fill out your name</ng-template>
+                <mat-form-field>
+                  <mat-label>Name</mat-label>
+                  <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+                </mat-form-field>
+                <div>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+            </div>
+            </mat-step>
+            <mat-step [stepControl]="PaymentMethod">
+                <div style="width:800px">
+              <form [formGroup]="PaymentMethod">
+                <ng-template matStepLabel>Fill out your address</ng-template>
+                <mat-form-field>
+                  <mat-label>Address</mat-label>
+                  <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                         required>
+                </mat-form-field>
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+              </div>
+            </mat-step>
+            <mat-step>
+              <ng-template matStepLabel>Done</ng-template>
+              <p>You are now done.</p>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button (click)="stepper.reset()">Reset</button>
+              </div>
+            </mat-step>
+          </mat-stepper>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="2" class="checkOutProducts">
+        <mat-grid-tile-header>
+            En tu carrito
+        </mat-grid-tile-header>
+        <div layout="row">
+            <div flex="">First item in row</div>
+            <div flex="">Second item in row</div>
+          </div>
+        <br>
+    </mat-grid-tile>
+</mat-grid-list>

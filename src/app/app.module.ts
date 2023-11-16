@@ -14,6 +14,7 @@ import { CreateProductComponent } from './pages/create-product/create-product.co
 import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { AccountComponent } from './pages/account/account.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AccountComponent } from './pages/account/account.component';
     HomeComponent,
     MenuComponent,
     CreateProductComponent,
-    AccountComponent
+    AccountComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

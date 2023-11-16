@@ -1,28 +1,84 @@
-<h1>Cuenta <mat-icon matPrefix>person</mat-icon></h1>
-<mat-divider>
-</mat-divider>
+
 
 <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
     <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon class="example-tab-icon">manage_accounts</mat-icon>
-          First
+          <mat-icon class="example-tab-icon">settings</mat-icon>
+          Configuración
         </ng-template>
-        Content 1
+        <h1>Configuración</h1>
+        <mat-grid-list cols="2" rowHeight="2:1">
+          <mat-grid-tile>
+            
+            <br>
+            <form class="example-form">
+              <mat-form-field class="example-full-width">
+                <mat-label>Nombre</mat-label>
+                <input matInput>
+                <mat-icon matSuffix>mode_edit</mat-icon>
+              </mat-form-field>
+              <br>
+              <mat-form-field class="example-full-width">
+                <mat-label>Apellidos</mat-label>
+                <input matInput>
+                <mat-icon matSuffix>mode_edit</mat-icon>
+              </mat-form-field>
+            </form>
+          
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <table [cellSpacing]="0">
+              <tr>
+                <td>
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Dirección</mat-label>
+                    <input matInput>
+                    <mat-icon matSuffix>mode_edit</mat-icon>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Codigo Postal</mat-label>
+                    <input matInput>
+                    <mat-icon matSuffix>mode_edit</mat-icon>
+                  </mat-form-field>
+                </td>
+              </tr>
+            </table>
+            
+          </mat-grid-tile>
+        </mat-grid-list>
+        <br>
+        <button mat-raised-button color="accent">Accent</button>
       </mat-tab>
+
       <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon class="example-tab-icon">person</mat-icon>
           Informacion de usuario
         </ng-template>
-        Content 1
+            
       </mat-tab>
       <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon class="example-tab-icon">payments</mat-icon>
           Metodos de pago
         </ng-template>
-        Content 1
-      </mat-tab>
+        <mat-card>
+          <mat-card-header><h2>
+            <mat-icon>credit_card</mat-icon>
+            *** 1024
+          </h2></mat-card-header>
+          <mat-card-content>
+            <p>Exp: 09/27</p></mat-card-content>
+        </mat-card>
+        <br>
+        <mat-card>
+          <mat-card-header>
+            <mat-icon>home_pin</mat-icon>
+            <h2>Dirección</h2></mat-card-header>
+          <mat-card-content>Simple card</mat-card-content>
+        </mat-card>
+  </mat-tab>
   </mat-tab-group>
   

@@ -1,0 +1,19 @@
+.checkOutProducts {
+    align-items: start;
+}
+
+.checkOutStepper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .checkOutStepper .mat-stepper-vertical {
+    width: 100%;
+  }
+  
+  .checkOutStepper .mat-stepper-vertical .mat-step-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }

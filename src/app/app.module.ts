@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import { GoogleLoginProvider} from '@abacritt/angularx-social-login';
@@ -40,7 +41,8 @@ import { environment } from 'src/environments/environment';
     FormsModule, 
     ReactiveFormsModule,
     ColorPickerModule,
-    SocialLoginModule
+    SocialLoginModule,
+    HttpClientModule
   ],
   providers: [{
     provide: 'SocialAuthServiceConfig',

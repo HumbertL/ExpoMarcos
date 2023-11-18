@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import { GoogleLoginProvider} from '@abacritt/angularx-social-login';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layouts/header/header.component';
@@ -15,6 +18,7 @@ import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angula
 import { ColorPickerModule } from 'ngx-color-picker';
 import { AccountComponent } from './pages/account/account.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -35,9 +39,26 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
     MaterialModule, 
     FormsModule, 
     ReactiveFormsModule,
-    ColorPickerModule
+    ColorPickerModule,
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [{
+    provide: 'SocialAuthServiceConfig',
+    useValue: {
+      autoLogin: false,
+      providers: [
+        {
+          id: GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider(
+            environment.googleClient
+          )
+        }
+      ],
+      onError: (err) => {
+        console.error(err);
+      }
+    } as SocialAuthServiceConfig,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

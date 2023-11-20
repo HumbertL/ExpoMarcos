@@ -72,6 +72,13 @@ export class HeaderComponent {
     });
   }
 
+  logOut(){
+    this.loginService.logOut();
+    this.loggedIn = false; //TMP
+    this.tokenService.remove();
+    this.router.navigate(['login']); 
+  }
+
   
 
 }

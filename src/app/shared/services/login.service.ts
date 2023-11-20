@@ -28,6 +28,11 @@ export class LoginService {
 
   }
 
+  logOut(){
+    this.loggedUser = {username:'', email:''};
+  }
+
+
   /* TODO
   public signUp(user: User) : User{
     //let newUser: User = this.httpClient.post('http://localhost:4500/', user);

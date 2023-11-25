@@ -13,4 +13,16 @@
   mat-form-field {
     display:flex;
     flex-direction:row;
+    width: 100%;
+
+    input {
+      display: flexbox;
+    }
   }
+
+  mat-grid-tile {
+    display: flex;
+    align-items:start;
+  }
+
+  

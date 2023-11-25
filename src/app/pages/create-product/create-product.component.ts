@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Product } from 'src/app/shared/interfaces/product';
+import { ProductsService } from 'src/app/shared/services/products.service';
 
 @Component({
   selector: 'app-create-product',
@@ -16,10 +20,47 @@ export class CreateProductComponent {
   };
   selectedColor: string = 'color1';
 
+  constructor(private _formBuilder: FormBuilder,
+    private productsService: ProductsService, private router: Router) {}
+
   selectedFile: any = null;
+
+  productCreation = this._formBuilder.group(
+    {
+      name:['', Validators.required],
+      price:['', Validators.required],
+      measure:['', Validators.required]
+    }
+  )
 
   onFileSelected(event: any): void {
       this.selectedFile = event.target.files[0] ?? null;
 
   }
+
+  uploadProduct(){
+    const product: Product = {
+      price: 3000,
+      name: this.productCreation.controls['name'].value?.toString(),
+      measure: this.productCreation.controls['measure'].value?.toString(),
+    };
+    let productId;
+    console.log(product);
+    this.productsService.createProduct(product).subscribe({next: value => {
+      productId = value.uid;
+      console.log(productId);
+      console.log(this.selectedFile);
+      this.productsService.uploadProductImage(productId, this.selectedFile).subscribe({next: value => {
+        console.log(value);
+        this.router.navigate(['']);
+      },error: (error) => {
+        alert('Image cannot be uploaded, please retry!');
+      } });
+    }, error: (mistake) => {
+      alert('Idk what the fuck happened but something happened');
+      console.log(mistake);
+    }, })
+  }
+
+
 }

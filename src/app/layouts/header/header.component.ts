@@ -18,7 +18,7 @@ export class HeaderComponent {
   sidenav!: MatSidenav;
   isMobile= true;
   isCollapsed = true;
-  loggedIn: Boolean = false;
+  loggedIn: Boolean = this.loginService.loggedIn.value;
 
   constructor(private socialAuth: SocialAuthService,
     private loginService: LoginService,
@@ -38,7 +38,7 @@ export class HeaderComponent {
 
               //Redirect
               this.loggedIn = true; //TMP
-              
+              this.loginService.loggedIn.next(true);
 
               this.router.navigate(['account']);
             },

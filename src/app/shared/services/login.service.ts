@@ -30,6 +30,7 @@ export class LoginService {
 
   logOut(){
     this.loggedUser = {username:'', email:''};
+    this.loggedIn.next(false);
   }
 
 

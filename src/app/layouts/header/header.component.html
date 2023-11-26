@@ -15,16 +15,16 @@
     </form>
     
     <span  class="example-spacer"></span>
-    <a mat-button *ngIf="!loggedIn" routerLink="login"> Login <mat-icon matSuffix>login</mat-icon></a>
-    <a mat-button *ngIf="!loggedIn" routerLink="signup">Signup</a>
+    <a mat-button *appLoginStatus="false" routerLink="login"> Login <mat-icon matSuffix>login</mat-icon></a>
+    <a mat-button *appLoginStatus="false" routerLink="signup">Signup</a>
     
-    <a mat-button *ngIf="loggedIn" (click) = "logOut()">Log out</a>
-    <a mat-button *ngIf="loggedIn">Carrito <mat-icon>shopping_cart</mat-icon></a>
+    <a mat-button *appLoginStatus="true" (click) = "logOut()">Log out</a>
+    <a mat-button *appLoginStatus="true">Carrito <mat-icon>shopping_cart</mat-icon></a>
 
 </mat-toolbar>
 
 <mat-sidenav-container autosize  color="primary">
-    <mat-sidenav *ngIf="loggedIn" [mode]="isMobile ? 'over' : 'side'" [opened]="isCollapsed ? 'false' : 'true'" >
+    <mat-sidenav *appLoginStatus="true" [mode]="isMobile ? 'over' : 'side'" [opened]="isCollapsed ? 'false' : 'true'" >
       <mat-list>
         <mat-list-item>Cuenta</mat-list-item>
         <mat-divider></mat-divider>

@@ -20,6 +20,7 @@ import { ColorPickerModule } from 'ngx-color-picker';
 import { AccountComponent } from './pages/account/account.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { environment } from 'src/environments/environment';
+import { LoginStatusDirective } from './shared/directives/login-status.directive';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { environment } from 'src/environments/environment';
     MenuComponent,
     CreateProductComponent,
     AccountComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    LoginStatusDirective
   ],
   imports: [
     BrowserModule,

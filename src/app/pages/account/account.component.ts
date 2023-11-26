@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./account.component.scss']
 })
 export class AccountComponent {
+  edit:boolean = false;
 
+  toogleEdit()
+  {
+    this.edit = !this.edit;
+  }
 }

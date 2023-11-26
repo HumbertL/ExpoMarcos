@@ -1,67 +1,56 @@
 
-
-<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
-    <mat-tab>
-        <ng-template mat-tab-label>
-          <mat-icon class="example-tab-icon">settings</mat-icon>
-          Configuración
-        </ng-template>
-        <h1>Configuración</h1>
-        <mat-grid-list cols="2" rowHeight="2:1">
-          <mat-grid-tile>
-            
-            <br>
-            <form class="example-form">
-              <mat-form-field class="example-full-width">
-                <mat-label>Nombre</mat-label>
-                <input matInput>
-                <mat-icon matSuffix>mode_edit</mat-icon>
-              </mat-form-field>
-              <br>
-              <mat-form-field class="example-full-width">
-                <mat-label>Apellidos</mat-label>
-                <input matInput>
-                <mat-icon matSuffix>mode_edit</mat-icon>
-              </mat-form-field>
-            </form>
-          
-          </mat-grid-tile>
-          <mat-grid-tile>
-            <table [cellSpacing]="0">
-              <tr>
-                <td>
-                  <mat-form-field class="example-full-width">
-                    <mat-label>Dirección</mat-label>
-                    <input matInput>
-                    <mat-icon matSuffix>mode_edit</mat-icon>
-                  </mat-form-field>
-                </td>
-                <td>
-                  <mat-form-field class="example-full-width">
-                    <mat-label>Codigo Postal</mat-label>
-                    <input matInput>
-                    <mat-icon matSuffix>mode_edit</mat-icon>
-                  </mat-form-field>
-                </td>
-              </tr>
-            </table>
-            
-          </mat-grid-tile>
-        </mat-grid-list>
-        <br>
-        <button mat-raised-button color="accent">Accent</button>
-      </mat-tab>
-
+<mat-tab-group mat-stretch-tabs="true" mat-align-tabs="center">
+    
       <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon class="example-tab-icon">person</mat-icon>
+          <mat-icon>person</mat-icon>
           Informacion de usuario
         </ng-template>
+            <mat-grid-list cols="3" rows="2" rowHeight="150px" colwidth="auto">
+              <mat-grid-tile [colspan]="2"  [rowspan]="2">
+                <form class="personal_Details_Controller">
+                  <mat-form-field>
+                    <mat-label>Nombre</mat-label>
+                    <input matInput [disabled]="!edit">
+                  </mat-form-field>
+                  <br>
+                  <mat-form-field>
+                    <mat-label>Apellidos</mat-label>
+                    <input matInput [disabled]="!edit">
+                  </mat-form-field>
+                </form>
+              
+              </mat-grid-tile>
+              <mat-grid-tile [colspan]="1"  [rowspan]="2" class="personalDetails">
+                <div class="personalDetailsInfo">
+                  <mat-icon class="profile_icon">person</mat-icon>
+                  <br>
+                  <h2>Perfil</h2>
+                  <br>
+                  <mat-form-field>
+                    <input matInput [disabled]="!edit" placeholder="Name here">
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput [disabled]="!edit" placeholder="Gender">
+                  </mat-form-field>
+                  
+                </div>
+              </mat-grid-tile>
+            </mat-grid-list>
+            <button *ngIf="!edit" class="controller" mat-raised-button color="warn"
             
+              (click)="toogleEdit()"><mat-icon>mode_edit</mat-icon>
+              Editar
+            </button>
+            <button *ngIf="edit" class="controller" mat-raised-button style="background-color:#6fc75b" 
+            
+              (click)="toogleEdit()"><mat-icon>save</mat-icon>
+              Guardar
+            </button>
       </mat-tab>
       <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon class="example-tab-icon">payments</mat-icon>
+          <mat-icon>payments</mat-icon>
           Metodos de pago
         </ng-template>
         <mat-card>

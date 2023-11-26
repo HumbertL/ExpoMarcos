@@ -21,6 +21,7 @@ import { AccountComponent } from './pages/account/account.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { environment } from 'src/environments/environment';
 
+
 @NgModule({
   declarations: [
     AppComponent,

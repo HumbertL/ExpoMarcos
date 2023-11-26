@@ -23,8 +23,8 @@
 
 </mat-toolbar>
 
-<mat-sidenav-container autosize *ngIf="loggedIn" color="primary">
-    <mat-sidenav [mode]="isMobile ? 'over' : 'side'" [opened]="isCollapsed ? 'false' : 'true'" >
+<mat-sidenav-container autosize  color="primary">
+    <mat-sidenav *ngIf="loggedIn" [mode]="isMobile ? 'over' : 'side'" [opened]="isCollapsed ? 'false' : 'true'" >
       <mat-list>
         <mat-list-item>Cuenta</mat-list-item>
         <mat-divider></mat-divider>

@@ -1,3 +1,13 @@
+
+.personal_Details_Controller
+{
+  mat-form-field {
+    width: 100%;
+    padding: 12px;
+    align-items: center;
+  }
+}
+
 mat-form-field {
     display:inline-block;
     padding: 12px;
@@ -5,7 +15,41 @@ mat-form-field {
     align-items: center;
   }
 
-img {
-    height: auto;
-    width: 110px;
+h1 {
+  font-weight: bold;
+}
+mat-tab {
+  padding-bottom: 25px;
+  div:last-child {
+    text-align: right;
+    align-items: end;
+  } 
+}
+
+
+.profile_icon {
+  transform: scale(2);
+  align-self: center;
+}
+
+.personalDetails mat-grid-tile {
+  align-content: flex-start;
+  display: flex;
+  align-items: baseline;
+  margin: 20px 40px;
+}
+.personalDetailsInfo {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.controller{
+  position: fixed;
+  bottom: 10;
+  right: 0;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
 }

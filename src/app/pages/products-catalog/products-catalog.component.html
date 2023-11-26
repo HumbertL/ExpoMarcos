@@ -1,0 +1,9 @@
+<h1>Catalogo de productos</h1>
+
+<mat-card *ngFor="let producto of products" class="product_card">
+    <mat-card-header>{{producto.name}}</mat-card-header>
+    <mat-card-content><p>{{producto.measure}}</p>
+        <br>
+        <p>{{producto.price}}</p>
+    </mat-card-content>
+</mat-card>

@@ -12,7 +12,7 @@ import { User } from '../interfaces/user';
 export class LoginService {
 
   public loggedIn: BehaviorSubject<Boolean> = new BehaviorSubject<Boolean>(false); 
-  loggedUser: User = {username:'', email:''};
+  loggedUser: User = {userName:'', email:''};
 
   constructor(private httpClient: HttpClient) { }
 
@@ -29,7 +29,7 @@ export class LoginService {
   }
 
   logOut(){
-    this.loggedUser = {username:'', email:''};
+    this.loggedUser = {userName:'', email:''};
     this.loggedIn.next(false);
   }
 

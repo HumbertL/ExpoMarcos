@@ -19,6 +19,16 @@ export class ProductsService {
 
   }
 
+  getMaterialProducts() : Observable<Product[]>
+  {
+    return this.httpClient.get<Product[]>(this.API__URL);
+  }
+
+  getProductPhoto(productId: string) : Observable<any>
+  {
+    const file_upload_url = this.API__URL + productId + '/photo';
+    return this.httpClient.get<any>(file_upload_url);
+  }
   uploadProductImage(productId: string, file: File) : Observable<any> {
     const file_upload_url = this.API__URL + productId + '/upload';
     const formData = new FormData();

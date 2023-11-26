@@ -23,9 +23,9 @@ export class LoginComponent {
 
   logIn(){
 
-    let user: User = {username: '' ,email:'', password: ''};
+    let user: User = {userName: '' ,email:'', password: ''};
 
-    const us: User = {username: this.username, email: this.email, password: this.password};
+    const us: User = {userName: this.username, email: this.email, password: this.password};
 
     this.loginService.logIn(us).subscribe({
       next: (response) =>{ //CREAR INTERFAZ DE TOKEN

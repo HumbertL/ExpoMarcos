@@ -21,6 +21,7 @@ import { AccountComponent } from './pages/account/account.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { environment } from 'src/environments/environment';
 import { LoginStatusDirective } from './shared/directives/login-status.directive';
+import { ProductsCatalogComponent } from './pages/products-catalog/products-catalog.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { LoginStatusDirective } from './shared/directives/login-status.directive
     CreateProductComponent,
     AccountComponent,
     CheckoutComponent,
-    LoginStatusDirective
+    LoginStatusDirective,
+    ProductsCatalogComponent
   ],
   imports: [
     BrowserModule,

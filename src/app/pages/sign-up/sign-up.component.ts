@@ -46,7 +46,7 @@ export class SignUpComponent {
     const stringname = `${this.personalDetails.controls['nombres'].value} ${this.personalDetails.controls['apellidos'].value} `
     const userToUpload: User
     = {
-      username : this.dbDetails.controls['username'].value!.toString(),
+      userName : this.dbDetails.controls['username'].value!.toString(),
       password : this.dbDetails.controls['password'].value!.toString(),
       email : this.dbDetails.controls['email'].value!.toString(),
       name : stringname,

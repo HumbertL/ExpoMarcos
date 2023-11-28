@@ -16,7 +16,7 @@
     width: 100%;
 
     input {
-      display: flexbox;
+      display: block;
     }
   }
 
@@ -25,4 +25,7 @@
     align-items:start;
   }
 
-  
+  emailSelect
+  {
+    width: 350px;
+  }

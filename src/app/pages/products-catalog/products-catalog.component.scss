@@ -1,0 +1,19 @@
+.product_card {
+    padding: 20px 40px;
+   
+    mat-card-header {
+        font-size: 50;
+        font-weight: bolder;
+    }
+    img {
+        width: 250px;
+        height: auto;
+    }
+    mat-card-content {
+        font-size:40;
+        font-weight: 200;
+        flex: 1; /* Allow card content to grow and fill available space */
+        display: flex; /* Enable flexbox layout */
+        justify-content: space-between;
+    }
+}

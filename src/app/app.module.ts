@@ -22,6 +22,7 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { environment } from 'src/environments/environment';
 import { LoginStatusDirective } from './shared/directives/login-status.directive';
 import { ProductsCatalogComponent } from './pages/products-catalog/products-catalog.component';
+import { ProductDetailComponent } from './pages/products-catalog/product-detail/product-detail.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { ProductsCatalogComponent } from './pages/products-catalog/products-cata
     AccountComponent,
     CheckoutComponent,
     LoginStatusDirective,
-    ProductsCatalogComponent
+    ProductsCatalogComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,

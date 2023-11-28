@@ -2,8 +2,15 @@
 
 <mat-card *ngFor="let producto of products" class="product_card">
     <mat-card-header>{{producto.name}}</mat-card-header>
-    <mat-card-content><p>{{producto.measure}}</p>
+    <img src={{producto.photo}} alt="something should be here dawg">
+
+    <mat-card-content routerLink="catalog/product/${{producto.uid}}"><p>Tamaño: {{producto.measure}}</p>
         <br>
-        <p>{{producto.price}}</p>
+        <p>Precio: {{producto.price}}</p>
     </mat-card-content>
+    <mat-card-footer>
+        <button mat-raised-button color="primary"><mat-icon>shopping_cart</mat-icon> Añadir a carrito</button>
+
+    </mat-card-footer>
 </mat-card>
+

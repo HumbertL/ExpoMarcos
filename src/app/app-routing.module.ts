@@ -7,6 +7,7 @@ import { CreateProductComponent } from './pages/create-product/create-product.co
 import { AccountComponent } from './pages/account/account.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { ProductsCatalogComponent } from './pages/products-catalog/products-catalog.component';
+import { ProductDetailComponent } from './pages/products-catalog/product-detail/product-detail.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent,}, 
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'account', component: AccountComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'catalog', component: ProductsCatalogComponent},
+  {path: 'catalog/product/:id', component: ProductDetailComponent},
   {path: '', component: HomeComponent}
 ];
 

@@ -1,6 +1,4 @@
-<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-  </button>
+
   <mat-stepper [linear]="isLinear" #stepper>
     <mat-step [stepControl]="personalDetails" [editable]=true>
       <form [formGroup]="personalDetails">
@@ -64,9 +62,9 @@
                        required>
               </mat-form-field>
             </mat-grid-tile>
-            <mat-grid-tile colspan="1" [rowspan]="2">
+            <mat-grid-tile colspan="1" rowspan="2" class="emailTile">
 
-              <mat-form-field>
+              <mat-form-field class="emailSelect">
                 <mat-icon matPrefix>mail</mat-icon>
                 <mat-label>Email</mat-label>
                 <input matInput formControlName="email" type='email' placeholder="someone@mail.com"
@@ -88,7 +86,7 @@
         Tu cuenta esta lista para usarse!</h2>
 
       <div>
-        <button mat-raised-button color="warn" (click)="uploadAccount()">Reset</button>
+        <button mat-raised-button color="warn" (click)="uploadAccount()">Continuar</button>
       </div>
     </mat-step>
   </mat-stepper>

@@ -18,6 +18,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCard, MatCardModule} from '@angular/material/card'; 
 import {MatTabsModule} from '@angular/material/tabs'; 
 import {MatChipsModule} from '@angular/material/chips'; 
+import {MatDialogModule} from '@angular/material/dialog'; 
 
 @NgModule({
   declarations: [],
@@ -41,7 +42,8 @@ import {MatChipsModule} from '@angular/material/chips';
     MatGridListModule,
     MatCardModule,
     MatTabsModule,
-    MatChipsModule
+    MatChipsModule,
+    MatDialogModule
   ]
 })
 export class MaterialModule { }

@@ -1,6 +1,6 @@
 
 <mat-tab-group mat-stretch-tabs="true" mat-align-tabs="center">
-    
+          
       <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon>person</mat-icon>
@@ -8,18 +8,18 @@
         </ng-template>
             <mat-grid-list cols="3" rows="2" rowHeight="150px" colwidth="auto">
               <mat-grid-tile [colspan]="2"  [rowspan]="2">
-                <form class="personal_Details_Controller">
+                <form [formGroup]="dbDetails">
                   <mat-form-field>
                     <mat-label>Nombre</mat-label>
-                    <input matInput [disabled]="!edit">
+                    <input matInput [disabled]="!edit" placeholder = {{currentUser.name}} formControlName="name" required>
                   </mat-form-field>
                   <br>
                   <mat-form-field>
-                    <mat-label>Apellidos</mat-label>
-                    <input matInput [disabled]="!edit">
+                    <mat-label>Username</mat-label>
+                    <input matInput [disabled]="!edit" placeholder="{{currentUser.userName}}" formControlName="userName" required>
                   </mat-form-field>
                 </form>
-              
+
               </mat-grid-tile>
               <mat-grid-tile [colspan]="1"  [rowspan]="2" class="personalDetails">
                 <div class="personalDetailsInfo">
@@ -27,14 +27,18 @@
                   <br>
                   <h2>Perfil</h2>
                   <br>
+                  <form [formGroup]="dbDetails_secondForm">
                   <mat-form-field>
-                    <input matInput [disabled]="!edit" placeholder="Name here">
+                    <mat-label>Email</mat-label>
+                    <input matInput [disabled]="!edit" placeholder = {{currentUser.email}} formControlName="email" required>
                   </mat-form-field>
                   <mat-form-field>
-                    <input matInput [disabled]="!edit" placeholder="Gender">
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput [disabled]="!edit" placeholder="******">
                   </mat-form-field>
-                  
+                  </form>
                 </div>
+                
               </mat-grid-tile>
             </mat-grid-list>
             <button *ngIf="!edit" class="controller" mat-raised-button color="warn"
@@ -44,7 +48,7 @@
             </button>
             <button *ngIf="edit" class="controller" mat-raised-button style="background-color:#6fc75b" 
             
-              (click)="toogleEdit()"><mat-icon>save</mat-icon>
+              (click)="uploadUser()"><mat-icon>save</mat-icon>
               Guardar
             </button>
       </mat-tab>

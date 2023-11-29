@@ -30,11 +30,11 @@ export class LoginComponent {
     this.loginService.logIn(us).subscribe({
       next: (response) =>{ //CREAR INTERFAZ DE TOKEN
             console.log(response);
-
+            
             this.tokenService.save(response);
-
             this.loginService.loggedIn.next(true);
-            this.loginService.loggedUser = user;
+            this.loginService.loggedUser = us;
+            console.log(this.loginService.loggedIn);
             this.router.navigate(['']);
       },
       error: () => {

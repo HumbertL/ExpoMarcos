@@ -17,12 +17,15 @@ import { TokenService } from 'src/app/shared/services/token.service';
 export class AccountComponent implements OnInit {
   edit:boolean = false;
   editThis: boolean = false;
-  currentUser: User ={ email: '', 
+  currentUser: User ={ 
+    email: '', 
     password: '', 
     name: '', 
     userName: '' ,
     gender: '', 
   };  
+
+
   uid: string = '';
 
   dbDetails = this._formBuilder.group({
@@ -38,11 +41,20 @@ export class AccountComponent implements OnInit {
     public dialog: MatDialog, private _formBuilder: FormBuilder)
   {}
   ngOnInit(): void {
-    this.userService.getUser(this.loginService.loggedUser.userName)
+    this.userService.getProfile()
     .subscribe({next: (response) => {
       this.currentUser = response;
       console.log(response);
       console.log(this.currentUser.UUID);
+
+      this.dbDetails.patchValue({
+        userName: response.userName,
+        name: response.name
+      });
+
+      this.dbDetails_secondForm.patchValue({
+        email: response.email
+      });
       
     },
     error: () => {
@@ -94,7 +106,7 @@ export class AccountComponent implements OnInit {
     };
     const token = this.tokenService.get();
     console.log(token);
-    this.userService.editUser(token, this.currentUser.UUID!).subscribe({next: (response) => {
+    this.userService.editUser(this.currentUser.UUID!).subscribe({next: (response) => { //////FIXXXXXX
       console.log(response);
       
     },

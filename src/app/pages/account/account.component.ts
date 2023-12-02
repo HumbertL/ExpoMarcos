@@ -98,23 +98,31 @@ export class AccountComponent implements OnInit {
 
   uploadUser()
   {
+
     const userToUpload: User
     = {
       userName : this.dbDetails.controls['userName'].value!.toString(),
       email : this.dbDetails_secondForm.controls['email'].value!.toString(),
-      name : this.dbDetails.controls['name'].value!.toString(),
+      name : this.dbDetails.controls['name'].value!.toString()
     };
+
+    if(userToUpload.userName == null || userToUpload.email == null || userToUpload.name == null){
+      alert("Don't leave empty fields");
+      return;
+    }
+
     const token = this.tokenService.get();
     console.log(token);
-    this.userService.editUser(this.currentUser.UUID!).subscribe({next: (response) => { //////FIXXXXXX
+    this.userService.editUser(this.currentUser.UUID!, userToUpload).subscribe({next: response => { //////FIXXXXXX
       console.log(response);
-      
+      alert("Changes saved succesfully!");
+      this.edit = false;
     },
     error: () => {
       console.log('Couldnt fetch user details');
       alert('Couldnt fetch user details');
       
     }
-  },);
+  });
   }
 }

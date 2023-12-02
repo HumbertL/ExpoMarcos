@@ -39,7 +39,7 @@ export class UserService {
     return this.httpClient.get<User>(api_url, {headers});
   }
 
-  editUser(UID: string) : Observable<User> {
+  editUser(UID: string, user: User) : Observable<any> {
     let api_url = this.API__URL + '/' + UID;
     let token = this.tokenService.get();
 
@@ -47,6 +47,6 @@ export class UserService {
       'Authorization': 'Bearer '+ token
     });
 
-    return this.httpClient.patch<User>(api_url, {headers});
+    return this.httpClient.patch<User>(api_url, user,{headers});
   }
 }

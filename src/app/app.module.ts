@@ -25,6 +25,7 @@ import { ProductsCatalogComponent } from './pages/products-catalog/products-cata
 import { ProductDetailComponent } from './pages/products-catalog/product-detail/product-detail.component';
 import { AccountDialogComponent } from './pages/account/account-dialog/account-dialog.component';
 import { NotificationsComponent } from './pages/notifications/notifications.component';
+import { MatTableModule } from '@angular/material/table'  
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { NotificationsComponent } from './pages/notifications/notifications.comp
     ReactiveFormsModule,
     ColorPickerModule,
     SocialLoginModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [{
     provide: 'SocialAuthServiceConfig',

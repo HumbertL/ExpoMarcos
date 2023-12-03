@@ -16,12 +16,12 @@ export class TokenService {
    }
 
   save(token: Token) {
-    localStorage.setItem('token', token.token);
+    sessionStorage.setItem('token', token.token);
     this.loginStatus.next(true);
   }
 
   get(): string {
-    return localStorage.getItem('token') || '';
+    return sessionStorage.getItem('token') || '';
   }
 
   isLoggedIn(): boolean {

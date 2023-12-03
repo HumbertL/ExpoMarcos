@@ -16,6 +16,7 @@ export class ProductsCatalogComponent implements OnInit{
   cart: Product[] = [];
   constructor(private productsService: ProductsService, private router: Router) {
      this.socket = io(environment.myApiURL);
+     this.socket
   }
 
   ngOnInit(): void {

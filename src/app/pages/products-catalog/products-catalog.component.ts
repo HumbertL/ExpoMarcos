@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/shared/interfaces/product';
 import { ProductsService } from 'src/app/shared/services/products.service';
 import { environment } from 'src/environments/environment';
+import { io, Socket } from 'socket.io-client';
 
 @Component({
   selector: 'app-products-catalog',
@@ -10,7 +11,10 @@ import { environment } from 'src/environments/environment';
 })
 export class ProductsCatalogComponent implements OnInit{
   products: Product[] = [];
-  constructor(private productsService: ProductsService) {}
+  socket: Socket;
+  constructor(private productsService: ProductsService) {
+     this.socket = io(environment.myApiURL);
+  }
 
   ngOnInit(): void {
     this.productsService.getMaterialProducts().
@@ -22,6 +26,7 @@ export class ProductsCatalogComponent implements OnInit{
         this.products[i].photo = imageLink;
       }
     }});
+    
     
 
   }

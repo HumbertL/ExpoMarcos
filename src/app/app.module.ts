@@ -24,6 +24,7 @@ import { LoginStatusDirective } from './shared/directives/login-status.directive
 import { ProductsCatalogComponent } from './pages/products-catalog/products-catalog.component';
 import { ProductDetailComponent } from './pages/products-catalog/product-detail/product-detail.component';
 import { AccountDialogComponent } from './pages/account/account-dialog/account-dialog.component';
+import { NotificationsComponent } from './pages/notifications/notifications.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { AccountDialogComponent } from './pages/account/account-dialog/account-d
     LoginStatusDirective,
     ProductsCatalogComponent,
     ProductDetailComponent,
-    AccountDialogComponent
+    AccountDialogComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,

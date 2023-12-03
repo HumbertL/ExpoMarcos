@@ -19,6 +19,7 @@ export class HeaderComponent {
   isMobile= true;
   isCollapsed = true;
   loggedIn: Boolean = this.loginService.loggedIn.value;
+  admin: Boolean = this.loginService.isAdmin.value;
 
   constructor(private socialAuth: SocialAuthService,
     private loginService: LoginService,
@@ -26,30 +27,36 @@ export class HeaderComponent {
     private tokenService: TokenService,
     private router: Router) {
 
-      this.socialAuth.authState.subscribe((user: SocialUser) => {
-        console.log(user);
+    this.socialAuth.authState.subscribe((user: SocialUser) => {
+      console.log(user);
 
-        if(user) {
-          this.loginService.googleLogin(user.idToken).subscribe({
-            next: (response: Token) => {
-              //Save Token
-              console.log('Success');
-              this.tokenService.save(response);
+      if(user) {
+        this.loginService.googleLogin(user.idToken).subscribe({
+          next: (response: Token) => {
+            //Save Token
+            console.log('Success');
+            this.tokenService.save(response);
 
-              //Redirect
-              this.loggedIn = true; //TMP
-              this.loginService.loggedIn.next(true);
+            //Redirect
+            this.loggedIn = true; //TMP
+            this.loginService.loggedIn.next(true);
 
-              this.router.navigate(['account']);
-            },
-            error: () => {
-              alert('Login Failed');
-            }
-          })
-        }
+            this.router.navigate(['account']);
+          },
+          error: () => {
+            alert('Login Failed');
+          }
+        })
+      }
                 
       });
       
+      loginService.isAdmin.subscribe({
+        next: (val : Boolean) => {
+          this.admin = val;
+        }
+      });
+
 
     }
 
@@ -60,6 +67,7 @@ export class HeaderComponent {
     } else {
       this.isCollapsed = !this.isCollapsed;
     }
+    this.admin = this.loginService.isAdmin.value;
   }
 
   ngOnInit() {
@@ -79,6 +87,7 @@ export class HeaderComponent {
     this.router.navigate(['login']); 
   }
 
+  
   
 
 }

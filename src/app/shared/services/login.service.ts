@@ -13,6 +13,7 @@ export class LoginService {
 
   public loggedIn: BehaviorSubject<Boolean> = new BehaviorSubject<Boolean>(false); 
   loggedUser: User = {userName:'', email:''};
+  public isAdmin: BehaviorSubject<Boolean> = new BehaviorSubject<Boolean>(false);
 
   constructor(private httpClient: HttpClient) { }
 
@@ -31,6 +32,7 @@ export class LoginService {
   logOut(){
     this.loggedUser = {userName:'', email:''};
     this.loggedIn.next(false);
+    this.isAdmin.next(false);
   }
 
 

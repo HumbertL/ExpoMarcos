@@ -13,13 +13,17 @@
             </mat-form-field>
         <br>
     </form>
+    <br>
+    
     
     <span  class="example-spacer"></span>
     <a mat-button *appLoginStatus="false" routerLink="login"> Login <mat-icon matSuffix>login</mat-icon></a>
     <a mat-button *appLoginStatus="false" routerLink="signup">Signup</a>
     
     <a mat-button *appLoginStatus="true" (click) = "logOut()">Log out</a>
-    <a mat-button *appLoginStatus="true">Carrito <mat-icon>shopping_cart</mat-icon></a>
+    <a mat-button *appLoginStatus="true" routerLink="catalog">Catalog</a>
+
+    <a mat-button *appLoginStatus="true" routerLink="checkout">Carrito <mat-icon>shopping_cart</mat-icon></a>
 
 </mat-toolbar>
 
@@ -39,7 +43,13 @@
            <mat-icon>shopping_bag</mat-icon>
            Historial
         </span>
-        </a>           
+        </a>
+        <a mat-list-item  *ngIf="(admin)" routerLink="adminNotifications">
+          <span class="entry">
+             <mat-icon>shopping_bag</mat-icon>
+             Admin Notifications
+          </span>
+          </a>            
       </mat-list>
     </mat-sidenav>
     <mat-sidenav-content>

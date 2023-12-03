@@ -49,4 +49,5 @@ export class UserService {
 
     return this.httpClient.patch<User>(api_url, user,{headers});
   }
+
 }

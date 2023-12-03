@@ -28,14 +28,14 @@ export class LoginComponent {
     const us: User = {userName: this.username, email: this.email, password: this.password};
 
     this.loginService.logIn(us).subscribe({
-      next: (response) =>{ //CREAR INTERFAZ DE TOKEN
+      next: (response) =>{
             console.log(response);
             
             this.tokenService.save(response);
             this.loginService.loggedIn.next(true);
             this.loginService.loggedUser = us;
             console.log(this.loginService.loggedIn);
-            this.router.navigate(['']);
+            this.router.navigate(['catalog']);
       },
       error: () => {
         console.log('User not logged, error happened');

@@ -55,6 +55,8 @@ export class AccountComponent implements OnInit {
       this.dbDetails_secondForm.patchValue({
         email: response.email
       });
+
+      if(response.role == 'admin') this.loginService.isAdmin.next(true);
       
     },
     error: () => {
@@ -82,19 +84,6 @@ export class AccountComponent implements OnInit {
     this.edit = !this.edit;
   }
 
-  updateUserDebug()
-  {
-    const userToUpload: User
-    = {
-      userName : this.dbDetails.controls['userName'].value!.toString(),
-      email : this.dbDetails_secondForm.controls['email'].value!.toString(),
-      name : this.dbDetails.controls['name'].value!.toString(),
-    };
-    console.log(userToUpload);
-    console.log(this.dbDetails.controls['userName'].value!.toString());
-    console.log(this.dbDetails_secondForm.controls['email'].value!.toString())
-    
-  }
 
   uploadUser()
   {

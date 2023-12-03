@@ -8,6 +8,8 @@ import { AccountComponent } from './pages/account/account.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { ProductsCatalogComponent } from './pages/products-catalog/products-catalog.component';
 import { ProductDetailComponent } from './pages/products-catalog/product-detail/product-detail.component';
+import { NotificationsComponent } from './pages/notifications/notifications.component';
+
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent,}, 
@@ -17,6 +19,7 @@ const routes: Routes = [
   {path: 'checkout', component: CheckoutComponent},
   {path: 'catalog', component: ProductsCatalogComponent},
   {path: 'catalog/product/:id', component: ProductDetailComponent},
+  {path: 'adminNotifications', component: NotificationsComponent},
   {path: '', component: HomeComponent}
 ];
 

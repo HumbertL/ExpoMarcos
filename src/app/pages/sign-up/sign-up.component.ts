@@ -50,7 +50,8 @@ export class SignUpComponent {
       password : this.dbDetails.controls['password'].value!.toString(),
       email : this.dbDetails.controls['email'].value!.toString(),
       name : stringname,
-      gender : this.personalDetails.controls['gender'].value?.toString() 
+      gender : this.personalDetails.controls['gender'].value?.toString(), 
+      role: 'user'
     };
     this.userService.createUser(userToUpload).subscribe({next: value => {
       console.log(value);

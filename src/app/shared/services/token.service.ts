@@ -9,6 +9,7 @@ import { Token } from '../interfaces/token';
 export class TokenService {
 
   loginStatus: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  adminStatus: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor() {
     this.loginStatus.next(this.isLoggedIn());

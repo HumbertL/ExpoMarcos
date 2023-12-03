@@ -14,6 +14,7 @@ export class ProductsCatalogComponent implements OnInit{
   socket: Socket;
   constructor(private productsService: ProductsService) {
      this.socket = io(environment.myApiURL);
+     this.socket
   }
 
   ngOnInit(): void {

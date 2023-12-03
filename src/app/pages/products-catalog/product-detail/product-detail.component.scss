@@ -8,6 +8,8 @@ mat-grid-list {
     top: 30px
 }
 
+
+
 mat-card {
     width: 100%;
     display: flex;
@@ -26,4 +28,9 @@ mat-card {
  .BuyProductDiv mat-card-footer {
     align-items: center;
     text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }

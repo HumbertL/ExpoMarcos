@@ -45,10 +45,30 @@
         <mat-grid-tile-header>
             En tu carrito
         </mat-grid-tile-header>
+
+
+        
         <div layout="row">
+            <div flex="" *ngFor="let producto of cart">
+              <mat-card  class="product_card">
+                <div>
+                  <mat-card-header>{{producto.name}}</mat-card-header>
+                <img src={{producto.photo}} alt="something should be here dawg">
+            
+                <mat-card-content routerLink="catalog/product/${{producto.uid}}"><p>Tamaño: {{producto.measure}}</p>
+                    <br>
+                    <p>Precio: {{producto.price}}</p>
+                </mat-card-content>
+                </div>
+              </mat-card>
+            </div>
+            
+        </div>
+        
+        <!-- <div layout="row">
             <div flex="">First item in row</div>
             <div flex="">Second item in row</div>
-          </div>
+        </div> -->
         <br>
     </mat-grid-tile>
 </mat-grid-list>

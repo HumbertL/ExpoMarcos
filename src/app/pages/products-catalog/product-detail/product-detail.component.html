@@ -1,26 +1,27 @@
-<button class="retrack" mat-stroked-button color="warn"><mat-icon>arrow_back</mat-icon> Regresar</button>
+<button class="retrack" mat-stroked-button color="warn" (click)="btn_return()"><mat-icon>arrow_back</mat-icon> Regresar</button>
 <br>
 <mat-grid-list cols="2" rows="2" rowHeight="100px">
-    <mat-grid-tile [colspan]="1" [rowspan]="2">
+    <mat-grid-tile [colspan]="1" [rowspan]="3">
       <br>
       <img src={{imageUrl}}>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="3">
       <mat-card>
-      <mat-card-header><h2>Producto Name here</h2></mat-card-header>
+      <mat-card-header><h2>{{product.name}}</h2></mat-card-header>
       <mat-card-content>
-        <h3>Material:</h3> 
-        <mat-chip-option color="warn">Caoba</mat-chip-option>
+        <h3>Medidas</h3> 
+        <mat-chip-option color="warn">{{product.measure}}</mat-chip-option>
       </mat-card-content>
       <mat-card-footer class="BuyProductDiv">
         <h3>Precio</h3>
-        <p><b>Numbers</b></p>
+        <mat-chip-option color="warn">{{product.price}}</mat-chip-option>
+        <!-- <p><b>Numbers</b></p>
         <mat-form-field>
           <input type="number" matInput placeholder="1">
         </mat-form-field>
         <button mat-raised-button color="primary"><mat-icon>shopping_cart</mat-icon>
           Añadir a carrrito
-        </button>
+        </button> -->
       </mat-card-footer>
     </mat-card>
   </mat-grid-tile>

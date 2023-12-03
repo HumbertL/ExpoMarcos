@@ -3,6 +3,7 @@ import { Product } from 'src/app/shared/interfaces/product';
 import { ProductsService } from 'src/app/shared/services/products.service';
 import { environment } from 'src/environments/environment';
 import { io, Socket } from 'socket.io-client';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products-catalog',
@@ -12,7 +13,8 @@ import { io, Socket } from 'socket.io-client';
 export class ProductsCatalogComponent implements OnInit{
   products: Product[] = [];
   socket: Socket;
-  constructor(private productsService: ProductsService) {
+  cart: Product[] = [];
+  constructor(private productsService: ProductsService, private router: Router) {
      this.socket = io(environment.myApiURL);
   }
 
@@ -30,4 +32,28 @@ export class ProductsCatalogComponent implements OnInit{
     
 
   }
+
+
+
+
+  addToCart(product: Product): void {
+    
+    this.cart.push(product);
+
+   
+    localStorage.setItem('cart', JSON.stringify(this.cart));
+
+    
+    console.log('Producto agregado al carrito:', product);
+  }
+
+  info_product(product: Product): void{
+    localStorage.setItem('product', JSON.stringify(product));
+    const currentRoute = this.router.routerState.snapshot.url;
+    const newRoute = currentRoute + `/product/${product.uid}`;
+
+    this.router.navigate([newRoute]);
+  }
+
+
 }

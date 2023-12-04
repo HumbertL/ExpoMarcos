@@ -18,7 +18,7 @@ export class ProductsCatalogComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.productsService.getMaterialProducts().
+    this.productsService.getMaterialProducts('').
     subscribe({next: (value: Product[])=> {
       this.products = value;
       console.log(this.products);

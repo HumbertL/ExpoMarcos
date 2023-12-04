@@ -19,9 +19,13 @@ export class ProductsService {
 
   }
 
-  getMaterialProducts() : Observable<Product[]>
+  getMaterialProducts(S: string) : Observable<Product[]>
   {
-    return this.httpClient.get<Product[]>(this.API__URL);
+    let URL = environment.myApiURL + '/products';
+
+    if(S!=='') URL = URL + '?m=' + S;
+
+    return this.httpClient.get<Product[]>(URL);
   }
 
   getProductPhoto(productId: string) : Observable<any>
